@@ -1,0 +1,17 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"vue": {
+		"2": {
+			"version": "2.2.1",
+			"baseUri": "/vue/${version}",
+			"files": [
+				"/vue.common.min.js",
+				"/vue.esm.js",
+				"/vue.min.js",
+				"/vue.runtime.common.min.js",
+				"/vue.runtime.esm.js",
+				"/vue.runtime.min.js"
+			]
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"font-awesome": {
+		"4": {
+			"version": "4.7.0",
+			"baseUri": "/font-awesome/${version}",
+			"files": [
+				"/css/font-awesome.min.css",
+				"/fonts/fontawesome-webfont.svg",
+				"/fonts/fontawesome-webfont.eot",
+				"/fonts/fontawesome-webfont.ttf",
+				"/fonts/fontawesome-webfont.woff",
+				"/fonts/fontawesome-webfont.woff2"
+			]
+		}
+	}
+}

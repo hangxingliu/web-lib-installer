@@ -1,0 +1,23 @@
+{
+  "name": "web-lib-installer",
+  "version": "1.0.0",
+  "description": "a web frontend library installer",
+  "main": "index.js",
+  "bin": {
+    "web-lib": "bin"
+  },
+  "scripts": {
+    "postinstall": "node src/dl.js"
+  },
+  "keywords": [
+    "installer"
+  ],
+  "dependencies": {
+    "request": "*",
+    "fs-extra": "*",
+    "color": "*",
+    "commander": "*"
+  },
+  "author": "LiuYue",
+  "license": "MIT"
+}

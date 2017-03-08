@@ -1,0 +1,12 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"babel-polyfill": {
+		"7": {
+			"version": "7.0.0-alpha.1",
+			"baseUri": "/babel-polyfill/${version}",
+			"files": [
+				"/polyfill.min.js"
+			]
+		}
+	}
+}

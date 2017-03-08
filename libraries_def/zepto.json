@@ -1,0 +1,12 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"zepto": {
+		"1": {
+			"version": "1.2.0",
+			"baseUri": "/zepto/${version}",
+			"files": [
+				"/zepto.min.js"
+			]
+		}
+	}
+}

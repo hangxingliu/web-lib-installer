@@ -1,0 +1,16 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"ionicons": {
+		"2": {
+			"version": "2.0.1",
+			"baseUri": "/ionicons/${version}",
+			"files": [
+				"/css/ionicons.min.css",
+				"/fonts/ionicons.eot",
+				"/fonts/ionicons.svg",
+				"/fonts/ionicons.ttf",
+				"/fonts/ionicons.woff"
+			]
+		}
+	}
+}

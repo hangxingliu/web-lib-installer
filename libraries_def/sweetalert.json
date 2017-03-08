@@ -1,0 +1,13 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"sweetalert": {
+		"1": {
+			"version": "1.1.3",
+			"baseUri": "/sweetalert/${version}",
+			"files": [
+				"/sweetalert.min.css",
+				"/sweetalert.min.js"
+			]
+		}
+	}
+}

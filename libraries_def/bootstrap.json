@@ -1,0 +1,29 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"bootstrap": {
+		"3": {
+			"version": "3.3.7",
+			"baseUri": "/bootstrap/${version}",
+			"files": [
+				"/css/bootstrap.min.css",
+				"/js/bootstrap.min.js",
+				"/fonts/glyphicons-halflings-regular.svg",
+				"/fonts/glyphicons-halflings-regular.eot",
+				"/fonts/glyphicons-halflings-regular.svg",
+				"/fonts/glyphicons-halflings-regular.ttf",
+				"/fonts/glyphicons-halflings-regular.woff",
+				"/fonts/glyphicons-halflings-regular.woff2"
+			]
+		},
+		"4": {
+			"version": "4.0.0-alpha.6",
+			"baseUri": "/bootstrap/${version}",
+			"files": [
+				"/css/bootstrap-grid.min.css",
+				"/css/bootstrap-reboot.min.css",
+				"/css/bootstrap.min.css",
+				"/js/bootstrap.min.js"
+			]
+		}
+	}
+}
