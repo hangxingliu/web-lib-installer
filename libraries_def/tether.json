@@ -1,0 +1,12 @@
+{
+	"_cdn": "https://cdn.bootcss.com",
+	"tether": {
+		"1": {
+			"version": "1.4.0",
+			"baseUri": "/tether/${version}",
+			"files": [
+				"/tether.min.js"
+			]
+		}
+	}
+}
