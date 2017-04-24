@@ -10,11 +10,12 @@ require('colors');
 (function main() {
 	printStart();
 
-	var downloadList = [],
+	let downloadList = [],
 		totalFileCount = 0,
 		lastDownloadName = '',
 		index = {},
-		startTime = Date.now();
+		startTime = Date.now(),
+		retryTimes = 0;
 	
 	try { 
 		index = require(INDEX_FILE);
@@ -27,19 +28,35 @@ require('colors');
 	download();
 
 	function download(isRetry = false) {
+		if (!isRetry) retryTimes = 0;
+		if (isRetry)
+			if (retryTimes++ >= 5)
+				return printErrorEnd(downloadList[0].name);
+
 		if (!downloadList.length) return finish();
-		var { url, target, fileName, id, name, shortVersion, version} = downloadList[0];
+		
+		var { url, target, fileName, id, name, shortVersion, version } = downloadList[0];
 		
 		name != lastDownloadName &&
 			console.log(`\n${lastDownloadName = name} ${'------'.cyan}`);
 		
 		fs.mkdirsSync(dirname(target));
 		console.log(`[${id + 1}/${totalFileCount}] ${isRetry ? 'Retrying' : 'Downloading'} ${fileName} ...`);
-		request(url, { method: 'GET', })
-			.on('error', (err) =>
-				console.log(`[${id + 1}/${totalFileCount}] Download error: ${fileName}\n${err.stack}`.red) +
-				process.nextTick(() => download(true))
-			).on('complete', () => {
+		let pipeline = request(url, { method: 'GET', });
+		let metError = false;
+		pipeline.on('response', response => {
+				if (response.statusCode != 200) {
+					console.error(`[${id + 1}/${totalFileCount}] Download error: ${fileName} status code: `.red +
+						String(response.statusCode).red.bold);
+					process.nextTick(() => download(true));
+					metError = true;
+				}
+			}).on('error', err => {
+				metError = true;
+				console.error(`[${id + 1}/${totalFileCount}] Download error: ${fileName}\n${err.stack}`.red);
+				process.nextTick(() => download(true));
+			}).on('complete', () => {
+				if (metError) return;
 				console.log(`[${id + 1}/${totalFileCount}] Download success!`.green);
 				downloadList.shift();
 				index[getIndexName(name, shortVersion)] = version;
@@ -94,5 +111,11 @@ function printStart() {
 function printEnd(cost) {
 	console.log('========================================================');
 	console.log(` ${'Install Frontend library success!'.green}     cost: ${cost}s `);
+	console.log('========================================================');
+}
+function printErrorEnd(failedName) {
+	console.log('========================================================');
+	console.log(` ${'Install Frontend library failed!'.red}`);
+	console.log(`   try to download `.red + failedName.red.bold + ` more than 5 times!`.red);
 	console.log('========================================================');
 }
