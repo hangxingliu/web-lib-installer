@@ -2,7 +2,7 @@
 	"_cdn": "https://cdn.bootcss.com",
 	"echarts": {
 		"3": {
-			"version": "3.4.0",
+			"version": "3.5.3",
 			"baseUri": "/echarts/${version}",
 			"files": [
 				"/echarts.min.js"

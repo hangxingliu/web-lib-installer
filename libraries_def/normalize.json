@@ -1,11 +1,11 @@
 {
 	"_cdn": "https://cdn.bootcss.com",
 	"normalize": {
-		"5": {
-			"version": "5.0.0",
+		"6": {
+			"version": "6.0.0",
 			"baseUri": "/normalize/${version}",
 			"files": [
-				"normalize.min.css"
+				"/normalize.min.css"
 			]
 		}
 	}

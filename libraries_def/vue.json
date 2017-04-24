@@ -2,7 +2,7 @@
 	"_cdn": "https://cdn.bootcss.com",
 	"vue": {
 		"2": {
-			"version": "2.2.1",
+			"version": "2.2.6",
 			"baseUri": "/vue/${version}",
 			"files": [
 				"/vue.common.min.js",
